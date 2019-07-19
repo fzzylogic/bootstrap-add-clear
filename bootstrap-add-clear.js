@@ -25,7 +25,7 @@
         me = this,
         options = this.options;
 
-      $this.wrap("<div class='add-clear-span form-group has-feedback " + options.wrapperClass + "'></div>");
+      $this.wrap("<div class='add-clear-span " + options.useFormGroupClass ? 'form-group ' : '' + "has-feedback " + options.wrapperClass + "'></div>");
       $this.after($("<span class='add-clear-x form-control-feedback " + options.symbolClass + "' style='display: none;'>" + options.closeSymbol + "</span>"));
       $this.next().css({
         'color': options.color,
@@ -138,6 +138,7 @@
     onClear: null,
     hideOnBlur: false,
     clearOnEscape: true,
+    useFormGroupClass: true,   // 'form-group' class may be required on a parent
     wrapperClass: '',
     zindex: 100
   };
